@@ -280,3 +280,69 @@ x==========x]
 [2024-02-16 19:59:03,343: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2024-02-17 17:39:25,999: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.11:8080]
+[2024-02-17 17:39:25,999: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-17 17:39:43,861: INFO: _internal: 127.0.0.1 - - [17/Feb/2024 17:39:43] "GET / HTTP/1.1" 200 -]
+[2024-02-17 17:40:09,255: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask_cors/decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "/home/vishal/Documents/Kidney_disease_classification/src/cnnClassifier/pipeline/prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2024-02-17 17:40:09,259: INFO: _internal: 127.0.0.1 - - [17/Feb/2024 17:40:09] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-02-17 17:53:28,959: INFO: _internal: 127.0.0.1 - - [17/Feb/2024 17:53:28] "GET / HTTP/1.1" 200 -]
+[2024-02-17 17:57:24,253: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/flask_cors/decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "/home/vishal/Documents/Kidney_disease_classification/src/cnnClassifier/pipeline/prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/vishal/anaconda3/envs/kidney/lib/python3.8/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2024-02-17 17:57:24,254: INFO: _internal: 127.0.0.1 - - [17/Feb/2024 17:57:24] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-02-17 18:00:38,869: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.11:8080]
+[2024-02-17 18:00:38,869: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-17 18:00:48,739: INFO: _internal: 127.0.0.1 - - [17/Feb/2024 18:00:48] "GET / HTTP/1.1" 200 -]
+[2024-02-17 18:00:56,794: INFO: _internal: 127.0.0.1 - - [17/Feb/2024 18:00:56] "POST /predict HTTP/1.1" 200 -]
